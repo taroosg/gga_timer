@@ -33,9 +33,11 @@ const App = () => {
   return (
     <div className="App">
       <main className="App-main">
-        <p>
-          次回GGAまで <code>{convertTime(count)}</code>
-        </p>
+        {
+          (count === 0)
+            ? <p>now loading...</p>
+            : <p>次回GGAまで <code>{convertTime(count)}</code></p>
+        }
       </main>
     </div>
   );
