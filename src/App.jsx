@@ -4,7 +4,11 @@ import './App.css';
 const App = () => {
   const [count, setCount] = useState(0);
 
-  const target = new Date(2020, 4, 21, 19, 0, 0).getTime();
+  // 月は0スタート
+  const event = {
+    name: 'the next GGA',
+    time: new Date(2020, 4, 21, 19, 0, 0).getTime(),
+  };
 
   const culcTime = target => {
     const now = new Date().getTime();
@@ -27,7 +31,7 @@ const App = () => {
   }
 
   useEffect(() => {
-    setTimeout(setTime(target), 1000);
+    setTimeout(setTime(event.time), 1000);
   }, []);
 
   return (
@@ -36,7 +40,7 @@ const App = () => {
         {
           (count === 0)
             ? <p>now loading...</p>
-            : <p>次回GGAまで <code>{convertTime(count)}</code></p>
+            : <p><code>{convertTime(count)} until {event.name}</code></p>
         }
       </main>
     </div>
