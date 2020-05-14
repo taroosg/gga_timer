@@ -19,7 +19,6 @@ const App = () => {
             ?
             <div>
               <Counter event={kadai} />
-              <Counter event={events.submit[0]} />
               <Counter event={events.hubday[0]} />
             </div>
             : <p>404 Event Not Found...</p>
