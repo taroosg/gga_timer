@@ -7,7 +7,7 @@ import _ from 'lodash';
 const App = () => {
 
   const kadai = _(events.kadai)
-    .filter(x => new Date(x.datetime).getTime() > new Date().getTime())
+    .filter(x => new Date(x.datetime).getTime() > new Date(Date.now() + ((new Date().getTimezoneOffset() + (9 * 60)) * 60 * 1000)).getTime())
     .orderBy(["datetime", "name"], ["asc", "asc"])
     .head()
 
