@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 
 const Counter = ({ event, countType }) => {
   const [count, setCount] = useState(0);
@@ -27,16 +27,22 @@ const Counter = ({ event, countType }) => {
 
   const convertCount = [convertHour, convertDate];
 
-  const setTime = targetTimestamp => {
+  const setTime = useCallback(targetTimestamp => {
     setTimeout(() => {
       setCount(culcTime(targetTimestamp));
       setTime(targetTimestamp);
     }, 100);
-  }
+  }, [])
+  // const setTime = targetTimestamp => {
+  //   setTimeout(() => {
+  //     setCount(culcTime(targetTimestamp));
+  //     setTime(targetTimestamp);
+  //   }, 100);
+  // }
 
   useEffect(() => {
     setTime(convertDatetimeToTimestamp(event.datetime));
-  }, [event]);
+  }, [event.datetime, setTime]);
 
   return (
     <div>
