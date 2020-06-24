@@ -36,7 +36,7 @@ const Counter = ({ event, countType }) => {
 
   useEffect(() => {
     setTime(convertDatetimeToTimestamp(event.datetime));
-  }, []);
+  }, [event]);
 
   return (
     <div>
