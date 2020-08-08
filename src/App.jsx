@@ -40,10 +40,14 @@ const App = () => {
             ? <p>404 Event Not Found...</p>
             :
             <div>
-              <Counter
-                event={kadai}
-                countType={countType}
-              />
+              {
+                !kadai
+                  ? <p>KADAI is all completed...!</p>
+                  : <Counter
+                    event={kadai}
+                    countType={countType}
+                  />
+              }
               <Counter
                 event={events.hubday[0]}
                 countType={countType}
