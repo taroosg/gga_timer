@@ -111,7 +111,7 @@ const App = () => {
                 <TableBody>
                   {
                     !isCompleted(events.kadai)
-                      ? <p>KADAI is all completed...!</p>
+                      ? <p style={{ textAlign: 'center' }}>KADAI is all completed...!</p>
                       : <Counter
                         event={isCompleted(events.kadai)}
                         countType={countType}
@@ -119,7 +119,7 @@ const App = () => {
                   }
                   {
                     !isCompleted(events.submit)
-                      ? <p>Product is completed...!</p>
+                      ? <p style={{ textAlign: 'center' }}>Product is completed...!</p>
                       : <Counter
                         event={isCompleted(events.submit)}
                         countType={countType}
@@ -127,7 +127,7 @@ const App = () => {
                   }
                   {
                     !isCompleted(events.hubday)
-                      ? <p>GGA is completed...!</p>
+                      ? <p style={{ textAlign: 'center' }}>GGA is completed...!</p>
                       : <Counter
                         event={isCompleted(events.hubday)}
                         countType={countType}
