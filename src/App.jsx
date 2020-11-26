@@ -49,6 +49,10 @@ const App = () => {
                   />
               }
               <Counter
+                event={events.submit[0]}
+                countType={countType}
+              />
+              <Counter
                 event={events.hubday[0]}
                 countType={countType}
               />
