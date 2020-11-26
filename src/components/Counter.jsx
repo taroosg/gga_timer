@@ -1,5 +1,8 @@
 import React, { useEffect, useState, useCallback } from 'react';
 
+import TableCell from '@material-ui/core/TableCell';
+import TableRow from '@material-ui/core/TableRow';
+
 const Counter = ({ event, countType }) => {
   const [count, setCount] = useState(0);
 
@@ -39,13 +42,18 @@ const Counter = ({ event, countType }) => {
   }, [event.datetime, setTime]);
 
   return (
-    <div>
+    <>
       {
         count === 0
           ? ''
-          : <p><code>{convertCount[countType](count)} until {event.name}</code></p>
+          : <TableRow>
+            <TableCell align="center">
+              {event.name}
+            </TableCell>
+            <TableCell align="center">{convertCount[countType](count)}</TableCell>
+          </TableRow>
       }
-    </div>
+    </>
   );
 }
 
