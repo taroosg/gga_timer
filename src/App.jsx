@@ -22,7 +22,7 @@ import {
 
 const darkTheme = createMuiTheme({
   typography: {
-    fontSize: 16,
+    fontSize: 20,
   },
   palette: {
     type: 'dark',
